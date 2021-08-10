@@ -17,3 +17,12 @@ To add the script as a Polybar module, add this to the Polybar config:
 Then add the module to the bar like you would any other module, i.e.: `modules-left = polybar-spotify`.
 
 Everything in the script that needs to be changed has been capitalized. The path to "debug info" and "last error" are not needed, and the corresponding `echo` commands can be deleted, as these are for debugging purposes.
+
+Flow to get the script up and running:
+1. Register a Spotify app [here](https://developer.spotify.com/). Get the client_id and client_secret.
+2. Encode `client_id:client_secret` with base64 to get authorization code.
+3. Through some means acquire an access and a refresh token, there are many examples out there, including the ones in the previously linked [github repo](https://github.com/spotify/web-api-auth-examples).
+4. Save the tokens in a file structured as previously mentioned, `{ "access_token": "TOKEN", "refresh_token": "TOKEN" }`, this is the `path_to_saved_tokens` variable within the script.
+5. Add the missing information to the `polybar_spotify.sh` script.
+6. Add the script as a module in the Polybar config.
+7. Restart Polybar and play a song or podcast episode on Spotify and hopefully the information is displayed.
