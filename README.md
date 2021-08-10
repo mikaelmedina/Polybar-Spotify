@@ -1,5 +1,5 @@
 # Polybar-Spotify
-A script for Polybar that displays currently playing track and artist from Spotify, on your status bar.
+A script for Polybar that displays currently playing track and artist info from Spotify on your status bar. As this script communicates with Spotify endpoints, you do not need to have Spotify installed on your computer. This script will display info even when playing music on your phone. As long as the user is actively listening to music, it will be displayed.
 
 Dependencies: curl, jq, polybar(duh)
 
