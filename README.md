@@ -16,7 +16,7 @@ To add the script as a Polybar module, add this to the Polybar config:
 
 Then add the module to the bar like you would any other module, i.e.: `modules-left = polybar-spotify`.
 
-Everything in the script that needs to be changed has been capitalized. The path to "debug info" and "last error" are not needed, and the corresponding `echo` commands can be deleted, as these are for debugging purposes.
+Everything in the script that needs to be changed has been capitalized. The path to "debug info" and "last error" are not needed, and the corresponding `echo` commands (line 11 and 29) can be deleted, as these are for debugging purposes.
 
 Flow to get the script up and running:
 1. Register a Spotify app [here](https://developer.spotify.com/). Get the client_id and client_secret.
