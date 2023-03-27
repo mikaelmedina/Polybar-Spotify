@@ -36,10 +36,10 @@ else
     item=$(jq -n "$currently_playing_request" | jq .item)
         case $(jq -n "$currently_playing_request" | jq .currently_playing_type) in
             \"track\")
-                echo $(jq -n "$item" | jq .name | sed 's/"//g') "-" $(jq -n "$item" | jq .artists | jq '.[].name' | sed 's/"//g')
+                echo $(jq -n "$item" | jq .name | perl -ne 's/((?<!\\)"|\\)//g; print;') "-" $(jq -n "$item" | jq .artists | jq '.[].name' | perl -ne 's/((?<!\\)"|\\)//g; print;')
                 ;;
             \"episode\")
-                echo $(jq -n "$item" | jq .name | sed 's/"//g') "-" $(jq -n "$item" | jq .show | jq .name | sed 's/"//g')
+                echo $(jq -n "$item" | jq .name | perl -ne 's/((?<!\\)"|\\)//g; print;') "-" $(jq -n "$item" | jq .show | jq .name | perl -ne 's/((?<!\\)"|\\)//g; print;')
                 ;;
             *)
                 ;;
